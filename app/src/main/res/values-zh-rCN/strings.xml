@@ -3,4 +3,16 @@
     <string name="title_products">产品</string>
     <string name="title_search">搜索</string>
     <string name="title_profile">我</string>
+    <string name="skip">跳过</string>
+    <string name="back">上一页</string>
+    <string name="next">下一页</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+    <string name="description_easy_shopping">购物方便</string>
+    <string name="easy_shopping">购物\n方便</string>
+    <string name="on_boarding_1">@string/lorem_ipsum</string>
+    <string name="description_free_shipping">免费包邮</string>
+    <string name="free_shipping">免费\n包邮</string>
+    <string name="description_special_discounts">特别折扣</string>
+    <string name="special_discounts">特别\n折扣</string>
+    <string name="finish">完成</string>
 </resources>

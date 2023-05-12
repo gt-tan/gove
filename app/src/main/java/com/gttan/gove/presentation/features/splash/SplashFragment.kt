@@ -5,34 +5,50 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.gttan.gove.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
+import com.gttan.gove.databinding.FragmentSplashBinding
+import kotlinx.coroutines.launch
 
 class SplashFragment : Fragment() {
+
+    private val viewModel: SplashViewModel by viewModels()
+
+    private var _binding: FragmentSplashBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+    ): View {
+        _binding = FragmentSplashBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SplashFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SplashFragment().apply {
-                arguments = Bundle().apply {
-                    //
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.viewState.collect {viewState ->
+                    when(viewState) {
+                        SplashViewEvent.Loading -> {}
+                        SplashViewEvent.ToOnBoardingFragment -> {
+                            findNavController().navigate(
+                                SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment()
+                            )
+                        }
+                        SplashViewEvent.ToMainFragment -> {
+                            findNavController().navigate(
+                                SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment()
+                            )
+                        }
+                    }
                 }
             }
+        }
+
     }
 }

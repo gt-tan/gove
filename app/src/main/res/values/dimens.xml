@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- margin. -->
+    <dimen name="large_margin">24dp</dimen>
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="little_margin">8dp</dimen>
+
+    <!-- spacing -->
+    <dimen name="line_spacing">-8dp</dimen>
+
+    <!-- text. -->
+    <dimen name="main_title_text_size">96sp</dimen>
+    <dimen name="design_title_text_size">48sp</dimen>
+    <dimen name="logo_title_text_size">32sp</dimen>
+    <dimen name="large_title_text_size">20sp</dimen>
+    <dimen name="title_text_size">16sp</dimen>
+    <dimen name="content_text_size">14sp</dimen>
+    <dimen name="subtitle_text_size">12sp</dimen>
+</resources>
