@@ -5,6 +5,11 @@
     <dimen name="normal_margin">16dp</dimen>
     <dimen name="little_margin">8dp</dimen>
 
+    <!-- padding. -->
+    <dimen name="large_padding">24dp</dimen>
+    <dimen name="normal_padding">16dp</dimen>
+    <dimen name="little_padding">8dp</dimen>
+
     <!-- spacing -->
     <dimen name="line_spacing">-8dp</dimen>
 

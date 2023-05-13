@@ -13,7 +13,7 @@ class SplashViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            delay(4000)
+            delay(2000)
             _viewState.emit(SplashViewEvent.ToMainFragment)
         }
     }
