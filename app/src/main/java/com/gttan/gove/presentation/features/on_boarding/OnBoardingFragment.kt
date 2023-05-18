@@ -1,6 +1,5 @@
 package com.gttan.gove.presentation.features.on_boarding
 
-import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -9,17 +8,16 @@ import com.gttan.gove.R
 import com.gttan.gove.databinding.FragmentOnBoardingBinding
 import com.gttan.gove.presentation.adapter.OnBoardingAdapter
 import com.gttan.gove.presentation.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {
 
     private val viewModel: OnBoardingViewModel by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.setFirstTime()
-    }
-
     override fun init() {
+        viewModel.setFirstTime()
+
         binding.apply {
             viewPager.adapter = OnBoardingAdapter(this@OnBoardingFragment)
 

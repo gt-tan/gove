@@ -1,12 +1,23 @@
 package com.gttan.gove.presentation.features.search
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.gttan.gove.domain.model.Product
+import com.gttan.gove.domain.use_cases.category.CategoryUseCases
+import com.gttan.gove.domain.use_cases.product.ProductUseCases
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SearchViewModel : ViewModel() {
+@HiltViewModel
+class SearchViewModel @Inject constructor(
+    private val productUseCases: ProductUseCases,
+    private val categoryUseCases: CategoryUseCases,
+) : ViewModel() {
 
     private val _state = MutableStateFlow(SearchDataState())
     val state get() = _state.asStateFlow()
@@ -16,18 +27,54 @@ class SearchViewModel : ViewModel() {
         getCategories()
     }
 
-    private fun getProducts() {
-        // TODO:
+    private fun getProducts() = viewModelScope.launch(Dispatchers.IO) {
+        productUseCases.getProducts().let { result ->
+            result.fold(
+                onSuccess = { products ->
+                    _state.update {
+                        it.copy(
+                            isLoading = false,
+                            products = products
+                        )
+                    }
+                },
+                onFailure = { error ->
+                    _state.update {
+                        it.copy(
+                            error = error.message
+                        )
+                    }
+                }
+            )
+        }
     }
 
-    private fun getCategories() {
-        // TODO:
+    private fun getCategories() = viewModelScope.launch(Dispatchers.IO) {
+        categoryUseCases.getCategories().let { result ->
+            result.fold(
+                onSuccess = { categories ->
+                    _state.update {
+                        it.copy(
+                            isLoading = false,
+                            categories = categories
+                        )
+                    }
+                },
+                onFailure = { error ->
+                    _state.update {
+                        it.copy(
+                            error = error.message
+                        )
+                    }
+                }
+            )
+        }
     }
 
     fun setQuery(query: String) {
         _state.update {
             it.copy(
-                query = query,
+                query = query
             )
         }
     }

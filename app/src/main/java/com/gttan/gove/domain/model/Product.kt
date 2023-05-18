@@ -1,7 +1,5 @@
 package com.gttan.gove.domain.model
 
-import android.media.Rating
-
 data class Product(
     val id: Int,
     val title: String,

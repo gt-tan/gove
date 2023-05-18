@@ -10,8 +10,10 @@ import com.gttan.gove.databinding.FragmentSearchBinding
 import com.gttan.gove.presentation.adapter.CategoryAdapter
 import com.gttan.gove.presentation.adapter.ProductAdapter
 import com.gttan.gove.presentation.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SearchFragment : BaseFragment<FragmentSearchBinding>() {
 
     private val viewModel: SearchViewModel by activityViewModels()

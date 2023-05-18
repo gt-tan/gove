@@ -13,9 +13,15 @@ import androidx.navigation.ui.setupWithNavController
 import com.gttan.gove.R
 import com.gttan.gove.databinding.ActivityMainBinding
 import com.gttan.gove.presentation.util.setPrice
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    // 以下 使用Hilt注入变量,Hilt注入的字段是不可以声明成private的
+    // @Inject
+    // lateinit var testValue: TestValue
 
     private val viewModel: MainViewModel by viewModels()
 

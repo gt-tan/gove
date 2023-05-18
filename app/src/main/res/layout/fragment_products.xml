@@ -19,6 +19,15 @@
         app:spanCount="2"
         tools:listitem="@layout/item_product" />
 
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- <com.facebook.shimmer.ShimmerFrameLayout -->
     <!--     android:id="@+id/shimmer" -->
     <!--     android:layout_width="match_parent" -->

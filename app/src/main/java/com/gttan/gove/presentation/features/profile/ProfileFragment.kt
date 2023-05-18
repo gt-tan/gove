@@ -9,8 +9,10 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.gttan.gove.R
 import com.gttan.gove.databinding.FragmentProfileBinding
 import com.gttan.gove.presentation.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     private val viewModel: ProfileViewModel by activityViewModels()
