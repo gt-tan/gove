@@ -1,13 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/normal_padding"
+    android:paddingTop="?attr/actionBarSize"
     tools:context=".presentation.features.profile.ProfileFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_log_out"
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/description_log_out"
+        app:icon="@drawable/ic_log_out"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/image_person"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/description_profile_photo"
+        android:gravity="center"
+        android:src="@drawable/ic_person"
+
+        app:layout_constraintBottom_toTopOf="@id/text_full_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/text_full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/little_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:textSize="@dimen/large_title_text_size"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toTopOf="@id/text_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_person"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/text_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/little_margin"
+        android:textStyle="italic"
+
+        app:layout_constraintBottom_toTopOf="@id/button_orders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_full_name"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/button_orders"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/little_margin"
+        android:includeFontPadding="false"
+        android:text="@string/orders"
+        android:textAlignment="textStart"
+        app:icon="@drawable/ic_bag"
+        app:iconPadding="16dp"
+
+        app:layout_constraintBottom_toTopOf="@id/button_favorites" />
+
+    <Button
+        android:id="@+id/button_favorites"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/little_margin"
+        android:includeFontPadding="false"
+        android:text="@string/favorites"
+        android:textAlignment="textStart"
+
+        app:icon="@drawable/ic_favorite"
+        app:iconPadding="@dimen/normal_padding"
+        app:layout_constraintBottom_toTopOf="@id/button_wallet" />
+
+    <Button
+        android:id="@+id/button_wallet"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/little_margin"
+        android:includeFontPadding="false"
+        android:text="@string/wallet"
+        android:textAlignment="textStart"
+
+        app:icon="@drawable/ic_wallet"
+        app:iconPadding="@dimen/normal_margin"
+        app:layout_constraintBottom_toTopOf="@id/button_help" />
+
+    <Button
+        android:id="@+id/button_help"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/little_margin"
+        android:includeFontPadding="false"
+        android:text="@string/customer_service"
+        android:textAlignment="textStart"
+
+        app:icon="@drawable/ic_headset"
+        app:iconPadding="@dimen/normal_padding"
+        app:layout_constraintBottom_toTopOf="@id/button_about" />
+
+    <Button
+        android:id="@+id/button_about"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/little_margin"
+        android:includeFontPadding="false"
+        android:text="@string/about_gove"
+        android:textAlignment="textStart"
+
+        app:icon="@drawable/ic_info"
+        app:iconPadding="@dimen/normal_padding"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

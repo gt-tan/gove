@@ -17,4 +17,16 @@
     <string name="finish">完成</string>
     <string name="description_product_image">商品图片</string>
     <string name="search_in_products">搜索商品…</string>
+    <string name="description_profile_photo">个人头像</string>
+    <string name="orders">我的订单</string>
+    <string name="favorites">我的收藏</string>
+    <string name="wallet">钱包</string>
+    <string name="customer_service">客户服务</string>
+    <string name="about_gove">关于</string>
+    <string name="description_log_out">登出应用</string>
+    <string name="dialog_title_sign_out">登出账号?</string>
+    <string name="dialog_message_sign_out">你正在退出账号</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="empty_cart">Oh, it looks like you have nothing in your cart!</string>
 </resources>

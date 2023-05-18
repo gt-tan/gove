@@ -1,8 +1,9 @@
-package com.gttan.gove.presentation.features.on_boarding
+package com.gttan.gove.presentation.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.gttan.gove.R
+import com.gttan.gove.presentation.features.on_boarding.OnBoardingLayout
 
 private val onBoardingItems = listOf(
     R.layout.layout_on_boarding_1,

@@ -6,6 +6,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.gttan.gove.databinding.FragmentProductsBinding
+import com.gttan.gove.presentation.adapter.ProductAdapter
 import com.gttan.gove.presentation.base.BaseFragment
 import kotlinx.coroutines.launch
 

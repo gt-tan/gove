@@ -1,4 +1,4 @@
-package com.gttan.gove.presentation.features.products
+package com.gttan.gove.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

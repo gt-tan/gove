@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.gttan.gove.R
 import com.gttan.gove.databinding.FragmentOnBoardingBinding
+import com.gttan.gove.presentation.adapter.OnBoardingAdapter
 import com.gttan.gove.presentation.base.BaseFragment
 
 class OnBoardingFragment : BaseFragment<FragmentOnBoardingBinding>() {

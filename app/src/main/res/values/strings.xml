@@ -17,4 +17,16 @@
     <string name="finish">finish</string>
     <string name="description_product_image">Product Image</string>
     <string name="search_in_products">Search in products…</string>
+    <string name="description_profile_photo">Profile photo</string>
+    <string name="orders">Orders</string>
+    <string name="favorites">Favorites</string>
+    <string name="wallet">Wallet</string>
+    <string name="customer_service">Customer Service</string>
+    <string name="about_gove">About Gove</string>
+    <string name="description_log_out">log out</string>
+    <string name="dialog_title_sign_out">Sign out?</string>
+    <string name="dialog_message_sign_out">You are going to sign out.</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="empty_cart">Oh, it looks like you have nothing in your cart!</string>
 </resources>
