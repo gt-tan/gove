@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.gttan.gove.R
 import com.gttan.gove.databinding.FragmentOnBoardingBinding
@@ -17,6 +18,11 @@ class OnBoardingFragment : Fragment() {
 
     private var _binding: FragmentOnBoardingBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.setFirstTime()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,7 +72,9 @@ class OnBoardingFragment : Fragment() {
     }
 
     private fun navigateToProducts() {
-        // todo 跳转页面
+        val action =
+            OnBoardingFragmentDirections.actionOnBoardingFragmentToProductsFragment()
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

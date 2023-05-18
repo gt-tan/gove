@@ -15,4 +15,6 @@
     <string name="description_special_discounts">特别折扣</string>
     <string name="special_discounts">特别\n折扣</string>
     <string name="finish">完成</string>
+    <string name="description_product_image">商品图片</string>
+    <string name="search_in_products">搜索商品…</string>
 </resources>

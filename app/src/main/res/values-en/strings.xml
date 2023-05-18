@@ -15,4 +15,6 @@
     <string name="description_special_discounts">Special Discounts</string>
     <string name="special_discounts">Special\nDiscounts</string>
     <string name="finish">finish</string>
+    <string name="description_product_image">Product Image</string>
+    <string name="search_in_products">Search in products…</string>
 </resources>

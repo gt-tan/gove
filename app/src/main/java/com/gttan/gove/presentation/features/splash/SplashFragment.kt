@@ -1,10 +1,10 @@
 package com.gttan.gove.presentation.features.splash
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -32,14 +32,21 @@ class SplashFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.viewState.collect {viewState ->
-                    when(viewState) {
+                viewModel.viewState.collect { viewState ->
+                    when (viewState) {
                         SplashViewEvent.Loading -> {}
                         SplashViewEvent.ToOnBoardingFragment -> {
                             findNavController().navigate(
                                 SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment()
                             )
                         }
+
+                        SplashViewEvent.ToAuthFragment -> {
+                            findNavController().navigate(
+                                SplashFragmentDirections.actionSplashFragmentToAuthFragment()
+                            )
+                        }
+
                         SplashViewEvent.ToMainFragment -> {
                             findNavController().navigate(
                                 SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment()
@@ -49,6 +56,10 @@ class SplashFragment : Fragment() {
                 }
             }
         }
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -37,6 +37,9 @@
             app:destination="@id/authFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
     </fragment>
     <fragment
         android:id="@+id/productsFragment"
@@ -45,7 +48,11 @@
         tools:layout="@layout/fragment_products" >
         <action
             android:id="@+id/action_productsFragment_to_productDetailFragment"
-            app:destination="@id/productDetailFragment" />
+            app:destination="@id/productDetailFragment" >
+            <argument
+                android:name="productId"
+                android:defaultValue="0" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
@@ -84,7 +91,11 @@
         android:id="@+id/productDetailFragment"
         android:name="com.gttan.gove.presentation.features.product_detail.ProductDetailFragment"
         android:label="fragment_product_detail"
-        tools:layout="@layout/fragment_product_detail" />
+        tools:layout="@layout/fragment_product_detail" >
+        <argument
+            android:name="productId"
+            app:argType="integer" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.gttan.gove.presentation.features.search.SearchFragment"
