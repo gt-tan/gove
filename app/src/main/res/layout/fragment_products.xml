@@ -19,81 +19,16 @@
         app:spanCount="2"
         tools:listitem="@layout/item_product" />
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
+    <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:indeterminate="true"
+
+        app:hideAnimationBehavior="inward"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackCornerRadius="@dimen/progress_corner_radius" />
 
-    <!-- <com.facebook.shimmer.ShimmerFrameLayout -->
-    <!--     android:id="@+id/shimmer" -->
-    <!--     android:layout_width="match_parent" -->
-    <!--     android:layout_height="match_parent" -->
-    <!--     android:padding="8dp"> -->
-
-    <!--     <GridLayout -->
-    <!--         android:layout_width="match_parent" -->
-    <!--         android:layout_height="match_parent" -->
-    <!--         android:columnCount="2"> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--         <com.google.android.material.card.MaterialCardView -->
-    <!--             android:layout_width="0dp" -->
-    <!--             android:layout_height="200dp" -->
-    <!--             android:layout_margin="8dp" -->
-    <!--             android:layout_columnWeight="1" -->
-    <!--             app:cardBackgroundColor="#CFCFCF" -->
-    <!--             app:strokeWidth="0dp"/> -->
-    <!--     </GridLayout> -->
-    <!-- </com.facebook.shimmer.ShimmerFrameLayout> -->
 </androidx.constraintlayout.widget.ConstraintLayout>

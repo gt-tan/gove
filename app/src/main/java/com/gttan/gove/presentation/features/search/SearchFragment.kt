@@ -35,11 +35,18 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
                     categoryAdapter.submitList(state.categories).also {
                         binding.recyclerViewProducts.smoothScrollToPosition(0)
                     }
-                    productAdapter.submitList(
-                        viewModel.getFilteredList(state)
-                    ).also {
+                    productAdapter.submitList(viewModel.getFilteredList(state)).also {
                         binding.recyclerViewProducts.smoothScrollToPosition(0)
                     }
+
+                    // 以下 当Layout是MotionLayout时,
+                    // 默认visibility由<ConstraintSet>里的 app:visibilityMode="ignore" 属性控制
+                    // 手动无效,所以先放这不搞了
+                    // if (state.isLoading) {
+                    //     binding.progressIndicator.show()
+                    // } else {
+                    //     binding.progressIndicator.hide()
+                    // }
                 }
             }
         }

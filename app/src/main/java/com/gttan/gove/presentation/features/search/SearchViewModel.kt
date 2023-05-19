@@ -41,6 +41,7 @@ class SearchViewModel @Inject constructor(
                 onFailure = { error ->
                     _state.update {
                         it.copy(
+                            isLoading = false,
                             error = error.message
                         )
                     }
@@ -63,6 +64,7 @@ class SearchViewModel @Inject constructor(
                 onFailure = { error ->
                     _state.update {
                         it.copy(
+                            isLoading = false,
                             error = error.message
                         )
                     }

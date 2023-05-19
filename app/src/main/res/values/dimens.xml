@@ -25,4 +25,7 @@
     <!-- card. -->
     <dimen name="main_card_height">180dp</dimen>
     <dimen name="main_card_corner_radius">16dp</dimen>
+
+    <!-- progress indicator. -->
+    <dimen name="progress_corner_radius">16dp</dimen>
 </resources>

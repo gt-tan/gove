@@ -32,10 +32,10 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.state.collect { state ->
                     if (state.isLoading) {
-                        binding.progressIndicator.isVisible = true
+                        binding.progressIndicator.show()
                     } else {
                         productAdapter.submitList(state.products)
-                        binding.progressIndicator.isVisible = false
+                        binding.progressIndicator.hide()
                     }
                 }
             }

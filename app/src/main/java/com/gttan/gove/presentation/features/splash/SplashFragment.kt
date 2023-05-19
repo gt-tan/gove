@@ -35,7 +35,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
 
                         SplashViewEvent.ToMainFragment -> {
                             findNavController().navigate(
-                                SplashFragmentDirections.actionSplashFragmentToOnBoardingFragment()
+                                SplashFragmentDirections.actionSplashFragmentToProductsFragment()
                             )
                         }
                     }
