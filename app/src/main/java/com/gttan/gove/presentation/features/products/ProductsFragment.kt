@@ -1,6 +1,5 @@
 package com.gttan.gove.presentation.features.products
 
-import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +13,10 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ProductsFragment : BaseFragment<FragmentProductsBinding>() {
+
+    // 关于viewModels()和activityViewModels()
+    // viewModels()只维护单个fragment的状态,比如多次创建该Fragment,它们之间的ViewModel是不共享的
+    // 而activityViewModels(),在该Fragment多次创建销毁时,ViewModel始终只存在一个对象,状态保留
 
     private val viewModel: ProductsViewModel by activityViewModels()
 

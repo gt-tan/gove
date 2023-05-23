@@ -28,5 +28,27 @@
     <string name="dialog_message_sign_out">你正在退出账号</string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>
-    <string name="empty_cart">Oh, it looks like you have nothing in your cart!</string>
+    <string name="empty_cart">你的购物车空无一物哦,快去添加吧!</string>
+    <string name="sign_in">登录</string>
+    <string name="sign_up">注册</string>
+    <string name="full_name">全名</string>
+    <string name="username">用户名(昵称)</string>
+    <string name="email">邮箱</string>
+    <string name="password">密码</string>
+    <string name="password_again">确认密码</string>
+    <string name="sign_up_successful">注册成功</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="toast_message_added_to_cart">Added to cart</string>
+    <string name="cart">Cart</string>
+    <string name="proceed_to_checkout">Proceed to checkout</string>
+    <string name="dialog_title_remove_from_cart">Remove from cart?</string>
+    <string name="dialog_message_remove_from_cart">You are going to remove this item from your cart.</string>
+    <string name="remove">Remove</string>
+    <string name="dialog_title_confirm_payment">Confirm payment?</string>
+    <string name="dialog_message_confirm_payment">Yout are going to confirm the payment</string>
+    <string name="dialog_message_payment_successful">Payment successful</string>
+
+    <plurals name="review">
+        <item quantity="other">%d 分</item>
+    </plurals>
 </resources>

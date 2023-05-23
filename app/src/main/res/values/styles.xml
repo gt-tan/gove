@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="App.gove.TitleTextAppearance" parent="TextAppearance.Material3.TitleLarge">
         <item name="android:textColor">?attr/colorPrimary</item>
         <item name="android:textSize">@dimen/logo_title_text_size</item>
@@ -7,5 +8,8 @@
         <item name="android:letterSpacing">0.06</item>
     </style>
 
+    <style name="Widget.gove.InputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Small</item>
+    </style>
 
 </resources>

@@ -2,6 +2,8 @@ package com.gttan.gove.presentation.features.cart
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gttan.gove.domain.model.CartItem
+import com.gttan.gove.domain.model.Product
 import com.gttan.gove.domain.use_cases.cart.CartUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,4 +37,28 @@ class CartViewModel @Inject constructor(
             }
         }
     }
+
+    fun increaseAmount(cartItem: CartItem) = viewModelScope.launch {
+        cartUseCases.increaseAmount(cartItem.product)
+    }
+
+    fun decreaseAmount(
+        cartItem: CartItem,
+        showRemoveFromCartDialog: (Product) -> Unit,
+    ) = viewModelScope.launch {
+        if (cartItem.amount > 1) {
+            cartUseCases.decreaseAmount(cartItem.product)
+        } else {
+            showRemoveFromCartDialog(cartItem.product)
+        }
+    }
+
+    fun removeProductFromCart(product: Product) = viewModelScope.launch {
+        cartUseCases.removeFromCart(product)
+    }
+
+    fun clearCart() {
+        cartUseCases.clearCart()
+    }
+
 }

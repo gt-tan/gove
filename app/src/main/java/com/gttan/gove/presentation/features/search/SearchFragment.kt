@@ -52,8 +52,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
         }
 
         binding.apply {
-            editTextSearch.doAfterTextChanged { query ->
-                viewModel.setQuery(query.toString())
+            editTextSearch.doAfterTextChanged { text ->
+                viewModel.setQuery(text.toString())
             }
             recyclerViewCategories.adapter = categoryAdapter
             recyclerViewProducts.adapter = productAdapter
