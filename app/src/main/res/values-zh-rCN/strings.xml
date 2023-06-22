@@ -40,7 +40,7 @@
     <string name="add_to_cart">加购</string>
     <string name="toast_message_added_to_cart">已加购</string>
     <string name="cart">购物车</string>
-    <string name="proceed_to_checkout">Proceed to checkout</string>
+    <string name="proceed_to_checkout">去结账</string>
     <string name="dialog_title_remove_from_cart">移出购物车?</string>
     <string name="dialog_message_remove_from_cart">你正在把该商品移出购物车</string>
     <string name="remove">移出</string>
