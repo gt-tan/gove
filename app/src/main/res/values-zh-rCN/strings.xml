@@ -50,6 +50,6 @@
     <string name="description_login">登录图片</string>
 
     <plurals name="review">
-        <item quantity="other">%d 分</item>
+        <item quantity="other">%d 个评论</item>
     </plurals>
 </resources>

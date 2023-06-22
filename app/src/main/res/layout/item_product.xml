@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
+            android:textColor="@color/white"
             android:textSize="@dimen/subtitle_text_size"
 
             app:layout_constraintBottom_toTopOf="@id/text_product_price"
@@ -40,6 +41,7 @@
             android:id="@+id/text_product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold"
 

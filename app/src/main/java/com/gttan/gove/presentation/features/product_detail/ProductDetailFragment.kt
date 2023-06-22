@@ -2,7 +2,7 @@ package com.gttan.gove.presentation.features.product_detail
 
 import android.widget.Toast
 import androidx.core.view.isVisible
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -19,13 +19,16 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding>() {
 
-    private val viewModel: ProductDetailViewModel by activityViewModels()
+    private val viewModel: ProductDetailViewModel by viewModels()
 
     override fun init() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.state.collect { state ->
                     with(binding) {
+                        loadingIndicator.isVisible = state.isLoading
+                        groupProductDetail.isVisible = !state.isLoading
+
                         state.product?.let { product ->
                             imageProduct setProductImage product.image
                             textProductRating setProductRating product.rating
@@ -36,29 +39,25 @@ class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding>() {
                             textProductCategory.text = product.category
                         }
 
-                        loadingIndicator.isVisible = state.isLoading
-                        groupProductDetail.isVisible = !state.isLoading
-
-                        viewAddToCart.amount = state.amount
-
-                        viewAddToCart.buttonIncrease.setOnClickListener {
-                            viewModel.incrementAmount()
-                        }
-
-                        viewAddToCart.buttonDecrease.setOnClickListener {
-                            viewModel.decrementAmount()
-                        }
-
-                        viewAddToCart.buttonAddToCart.setOnClickListener {
-                            viewModel.addToCart(
-                                onSuccess = {
-                                    Toast.makeText(
-                                        requireContext(),
-                                        resources.getString(R.string.toast_message_added_to_cart),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            )
+                        viewAddToCart.apply {
+                            amount = state.amount
+                            buttonIncrease.setOnClickListener {
+                                viewModel.incrementAmount()
+                            }
+                            buttonDecrease.setOnClickListener {
+                                viewModel.decrementAmount()
+                            }
+                            buttonAddToCart.setOnClickListener {
+                                viewModel.addToCart(
+                                    onSuccess = {
+                                        Toast.makeText(
+                                            requireContext(),
+                                            resources.getString(R.string.toast_message_added_to_cart),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                )
+                            }
                         }
                     }
                 }

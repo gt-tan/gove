@@ -13,7 +13,7 @@ infix fun ImageView.setProductImage(url: String) {
 }
 
 infix fun TextView.setPrice(price: Double) {
-    this.text = String.format("$.2f".format(price))
+    this.text = String.format("$%.2f".format(price))
 }
 
 infix fun TextView.setProductRating(rating: Rating) {
