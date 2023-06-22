@@ -1,5 +1,6 @@
 package com.gttan.gove.presentation.features.sign_in
 
+import android.view.WindowManager
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
@@ -11,8 +12,10 @@ import com.gttan.gove.presentation.base.BaseFragment
 import com.gttan.gove.presentation.features.auth.AuthFragment
 import com.gttan.gove.presentation.features.auth.AuthProgressDialog
 import com.gttan.gove.presentation.features.auth.AuthState
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SignInFragment : BaseFragment<FragmentSignInBinding>() {
 
     private val viewModel by activityViewModels<SignInViewModel>()
@@ -56,6 +59,8 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                 viewModel.signIn()
             }
         }
+
+        requireActivity().window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
     }
 
 }

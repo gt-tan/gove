@@ -6,6 +6,8 @@ import com.gttan.gove.data.local.DataStoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,15 +19,22 @@ class SplashViewModel @Inject constructor(
     private val _viewState = MutableSharedFlow<SplashViewEvent>()
     val viewState get() = _viewState.asSharedFlow()
 
+    private val userSignedIn get() = dataStoreManager.getSignedIn
+    private val isFirstTime get() = dataStoreManager.getFirstTime
+
     init {
         viewModelScope.launch {
-            dataStoreManager.getFirstTime.collect { isFirstTime ->
-                if (isFirstTime) {
-                    _viewState.emit(SplashViewEvent.ToOnBoardingFragment)
-                } else {
+            userSignedIn.zip(isFirstTime) { userSignedIn, isFirstTime ->
+                if (userSignedIn) {
                     _viewState.emit(SplashViewEvent.ToMainFragment)
+                } else {
+                    if (isFirstTime) {
+                        _viewState.emit(SplashViewEvent.ToOnBoardingFragment)
+                    } else {
+                        _viewState.emit(SplashViewEvent.ToAuthFragment)
+                    }
                 }
-            }
+            }.collect()
         }
     }
 }
